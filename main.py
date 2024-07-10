@@ -6,19 +6,7 @@ import datetime
 import pandas as pd
 from PIL import Image
 
-# Function to convert image to base64 format
-def image_to_base64(image):
-    import base64
-    from io import BytesIO
-    buffered = BytesIO()
-    image.save(buffered, format="PNG")
-    img_str = base64.b64encode(buffered.getvalue()).decode()
-    return img_str
-
-# Load the images
 logo = Image.open('logo.png')
-jangirii = Image.open('jangirii.png')
-
 # Read the CSV file containing the quotes and authors
 quotes_df = pd.read_csv('AnimeQuotes.csv')  # Replace 'AnimeQuotes.csv' with your file path
 
@@ -66,12 +54,6 @@ def custom_sidebar():
 # Display the logo at the top of the main page 
 st.image(logo, use_column_width=True)
 
-# Center align the 'jangirii.png' image
-st.markdown(
-    f'<div style="text-align:center"><img src="data:image/png;base64,{image_to_base64(jangirii)}"></div>',
-    unsafe_allow_html=True
-)
-
 # Use the custom sidebar method
 page_choice = custom_sidebar()
 
@@ -92,4 +74,3 @@ elif page_choice == "Text Translation":
     page2.main()
 elif page_choice == "About the App":
     page4.main()
-`

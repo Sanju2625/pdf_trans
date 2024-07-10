@@ -15,6 +15,7 @@ def image_to_base64(image):
     img_str = base64.b64encode(buffered.getvalue()).decode()
     return img_str
 
+# Load the images
 logo = Image.open('logo.png')
 jangirii = Image.open('jangirii.png')
 

@@ -52,7 +52,7 @@ def custom_sidebar():
     return page_choice
 
 # Display the logo at the top of the main page 
-st.image(logo, use_column_width=True)
+st.image(logo, use_column_width=500)
 
 # Use the custom sidebar method
 page_choice = custom_sidebar()

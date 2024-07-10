@@ -70,7 +70,7 @@ display_quote()
 # Depending on the selected choice, call the respective main function
 if page_choice == "Document and Pdf Translation":
     page1.main()
-elif page_choice == "Text Translation":
+elif page_choice == "Text Translation &Audio":
     page2.main()
 elif page_choice == "About the App":
     page4.main()

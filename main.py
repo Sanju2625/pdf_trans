@@ -6,7 +6,9 @@ import datetime
 import pandas as pd
 from PIL import Image
 
+# Load the logo image
 logo = Image.open('logo.png')
+
 # Read the CSV file containing the quotes and authors
 quotes_df = pd.read_csv('AnimeQuotes.csv')  # Replace 'AnimeQuotes.csv' with your file path
 
@@ -18,8 +20,10 @@ quote_color_list = [
     "Orange", "Pink", "Purple",
     "Brown", "Indigo", "Teal"
 ]
-author_color_list = ['Teal', 'Indigo', 'Brown', 'Purple', 'Pink', 'Orange', 'Gray', 'White', 'Black', 'Yellow', 'Magenta', 'Cyan', 'Blue', 'Green', 'Red']
- # Corresponding colors for authors
+author_color_list = [
+    'Teal', 'Indigo', 'Brown', 'Purple', 'Pink', 'Orange', 'Gray', 'White', 
+    'Black', 'Yellow', 'Magenta', 'Cyan', 'Blue', 'Green', 'Red'
+]  # Corresponding colors for authors
 
 # Function to get the quote and author based on the current hour
 def get_hourly_quote():
@@ -41,8 +45,9 @@ def display_quote():
     author_html = f'<p style="color:{author_color}; font-family: Lucida Console, Monaco, monospace; font-size: 16px;"><em>- {author}</em></p>'
     
     full_html = tp_html + quote_html + author_html
-    st.sidebar.markdown(full_html, unsafe_allow_html=True)   # Display the combined quote and author in the sidebar
+    st.sidebar.markdown(full_html, unsafe_allow_html=True)  # Display the combined quote and author in the sidebar
 
+# Function to create the custom sidebar
 def custom_sidebar():
     st.sidebar.title("Features")
     st.sidebar.header("Available Options")  # Add a sidebar title
@@ -51,7 +56,7 @@ def custom_sidebar():
     
     return page_choice
 
-# Display the logo at the top of the main page 
+# Display the logo at the top of the main page
 st.image(logo, use_column_width=True)
 
 # Use the custom sidebar method

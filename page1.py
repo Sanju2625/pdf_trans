@@ -68,7 +68,6 @@ language_mapping = {
     "si": "Sinhala",
     "km": "Khmer",
     "jw": "Javanese"
-    "kok": "Konkani"
 }
 
 

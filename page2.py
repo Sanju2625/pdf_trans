@@ -113,7 +113,7 @@ def count_words(text):
     return len(words)
 
 def main():
-    st.image("jangirii.png", width=800)
+    st.image("jangirii.png", width=600)
     st.title("Text Translation and Conversion to Speech (MultiLingual)")
     
     # Get user input
